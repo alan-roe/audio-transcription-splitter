@@ -1,4 +1,4 @@
-# Audio Splitter for Transcription
+# Audio Transcription Splitter
 
 A simple Python utility to split large audio files into smaller chunks (default 30 minutes) to avoid API limits (e.g., Gemini API 600s limit).
 
@@ -46,3 +46,39 @@ python splitter.py interview.aac 15
 
 ## Output
 The script creates a directory named `{filename}_chunks` containing the split files (e.g., `part_001.mp3`, `part_002.mp3`).
+
+## Gemini Transcription Schema
+
+When using Gemini Pro 3 for transcription, you can use the following JSON schema to structure the output:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "transcription": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "part_no": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "title",
+    "transcription",
+    "notes",
+    "part_no"
+  ],
+  "propertyOrdering": [
+    "title",
+    "transcription",
+    "notes",
+    "part_no"
+  ]
+}
+```
