@@ -1,0 +1,18 @@
+# Audio files
+*.mp3
+*.aac
+*.wav
+*.m4a
+*.flac
+
+# Output directories
+*_chunks/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
